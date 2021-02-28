@@ -5,7 +5,7 @@ import constants from "../constants";
 
 const ProtectedComponent: FunctionComponent = (props): ReactElement => {
   const { isAuth } = useContext(AuthContext);
-  if (!isAuth) return <Redirect to={`/${constants.VIEW_DEFAULT_ENTRY}`} />;
+  if (!isAuth) return <Redirect to={`/${constants.SITEMAP.LOGIN}`} />;
   return <React.Fragment>{props.children}</React.Fragment>;
 };
 

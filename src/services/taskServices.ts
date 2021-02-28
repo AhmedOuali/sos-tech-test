@@ -10,12 +10,12 @@ export const getOneTask = (id: string | number, options?: Options): Promise<ITas
   return httpGet<ITask>(`${END_POINT_WS_URL}/tasks/${id}`, options)
 }
 
-export const createTask = (food, options?: Options): Promise<ITask> => {
-  return httpPost<ITask>(`${END_POINT_WS_URL}/tasks`, food, options)
+export const createTask = (task: ITask, options?: Options): Promise<ITask> => {
+  return httpPost<ITask>(`${END_POINT_WS_URL}/tasks`, task, options)
 }
 
-export const updateTask = (id: string | number, food, options?: Options): Promise<ITask> => {
-  return httpUpdate<ITask>(`${END_POINT_WS_URL}/tasks/${id}`, food, options)
+export const updateTask = (id: string | number, task: ITask, options?: Options): Promise<ITask> => {
+  return httpUpdate<ITask>(`${END_POINT_WS_URL}/tasks/${id}`, task, options)
 }
 
 export const deleteTask = (id: string | number, options?: Options): Promise<ITask> => {

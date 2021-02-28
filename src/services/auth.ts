@@ -13,7 +13,9 @@ interface ILoginRequest {
   password: string
 }
 
-
+interface  ILogoutResponse {
+  status: "OK" | "FAILURE",
+}
 
 export const login = (user: ILoginRequest, options?: Options): Promise<ILoginResponse> => {
   return httpPost<ILoginResponse>(`${END_POINT_WS_URL}/auth/login`, user, options)
@@ -23,6 +25,6 @@ export const checkAuthentication = (options?: Options): Promise<ILoginResponse> 
   return httpGet<ILoginResponse>(`${END_POINT_WS_URL}/auth/checkAuthentication`, options)
 }
 
-export const logout = (options?: Options) => {
-  return httpGet(`${END_POINT_WS_URL}/auth/logout`, options)
+export const logout = (options?: Options): Promise<ILogoutResponse> => {
+  return httpGet<ILogoutResponse>(`${END_POINT_WS_URL}/auth/logout`, options)
 }

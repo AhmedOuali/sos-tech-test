@@ -2,7 +2,6 @@ import React, { FunctionComponent, ReactElement, useContext } from "react";
 import { Route, Redirect, RouteProps } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 import * as PropTypes from 'prop-types'
-import App from '../App'
 import constants from '../constants'
 
 const NoAuthOnlyRoute: FunctionComponent<RouteProps> = ({ component: Component, render, ...rest }): ReactElement => {
