@@ -1,7 +1,6 @@
 import axios from 'axios'
 import { message } from 'antd'
-
-import { END_POINT_WS_URL, SITEMAP } from '../constants'
+import { END_POINT_WS_URL } from '../constants'
 import { HTTPError } from './errors/HTTPError'
 
 const instance = axios.create({

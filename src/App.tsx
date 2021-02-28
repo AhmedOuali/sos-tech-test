@@ -1,14 +1,16 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { FunctionComponent } from 'react'
 import './App.css';
 import { AuthProvider } from './context/AuthContext';
 import * as PropTypes from 'prop-types'
+import { TasksProvider } from './context/TasksContext';
 
-function App({children}) {
+const App: FunctionComponent = ({children}) => {
   return (
     <div className="App">
       <AuthProvider>
-        {children}
+        <TasksProvider>
+          {children}
+        </TasksProvider>
       </AuthProvider>
     </div>
   );

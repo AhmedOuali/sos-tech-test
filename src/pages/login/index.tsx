@@ -1,22 +1,26 @@
-import React, { useState } from 'react'
+import React, { FunctionComponent, useContext, useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { Form, Input, Button, Checkbox, Alert } from 'antd'
 import { UserOutlined, LockOutlined } from '@ant-design/icons'
 import { login } from '../../services/auth'
 import './login.scss'
+import { AuthContext } from '../../context/AuthContext'
 
-const Login = () => {
+const Login: FunctionComponent = () => {
   const [errorMessage, setErrorMessage] = useState(null)
-  const [loading, setLoading] = useState(false)
-  const history = useHistory();
-  const push = history.push;
+  const { setAuth } = useContext(AuthContext)
+  const [loading, setLoading] = useState<boolean>(false)
+  const history = useHistory()
+  const push = history.push
   const onSubmit = values => {
     setLoading(true)
     login(values, { disableDefaultErrorMessage: true, push })
       .then(() => {
-        setLoading(false)
+        // setLoading(false)
+        setAuth(true)
       }).catch(err => {
       // setLoading(false)
+      setAuth(false)
       setLoading(false)
       setErrorMessage(err.message)
     })
