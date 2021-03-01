@@ -48,20 +48,20 @@ response: {status: 'OK' | 'FAILURE', redirect: string, user: {id: number, email:
 response: {status: string}
 
 ### getAllTasks: {get} http://api.aos.res2menu.online/tasks
-response: {id: number, title: string, shortDesc: string, longDesc: string, createdAt: string, updatedAt: string, ownerId: number}[]
+* response: {id: number, title: string, shortDesc: string, longDesc: string, createdAt: string, updatedAt: string, ownerId: number}[]
 
 ### getTask: {get} http://api.aos.res2menu.online/tasks/:id
-response: {id: number, title: string, shortDesc: string, longDesc: string, createdAt: string, updatedAt: string, ownerId: number}
+* response: {id: number, title: string, shortDesc: string, longDesc: string, createdAt: string, updatedAt: string, ownerId: number}  
 
 ### deleteTask: {delete} http://api.aos.res2menu.online/tasks/:id
-response: {id: number, title: string, shortDesc: string, longDesc: string, createdAt: string, updatedAt: string, ownerId: number}
+* response: {id: number, title: string, shortDesc: string, longDesc: string, createdAt: string, updatedAt: string, ownerId: number}  
 
 ### updateTask: {update} http://api.aos.res2menu.online/tasks/:id
-request: {id: number, title: string, shortDesc: string, longDesc: string, createdAt: string, updatedAt: string, ownerId: number}
-response: {id: number, title: string, shortDesc: string, longDesc: string, createdAt: string, updatedAt: string, ownerId: number}
+* request: {id: number, title: string, shortDesc: string, longDesc: string, createdAt: string, updatedAt: string, ownerId: number}  
+* response: {id: number, title: string, shortDesc: string, longDesc: string, createdAt: string, updatedAt: string, ownerId: number}
 
 ### createTask: {post} http://api.aos.res2menu.online/tasks
-request: {id: number, title: string, shortDesc: string, longDesc: string, createdAt: string, updatedAt: string, ownerId: number}
-response: {id: number, title: string, shortDesc: string, longDesc: string, createdAt: string, updatedAt: string, ownerId: number}
+* request: {id: number, title: string, shortDesc: string, longDesc: string, createdAt: string, updatedAt: string, ownerId: number}  
+* response: {id: number, title: string, shortDesc: string, longDesc: string, createdAt: string, updatedAt: string, ownerId: number}
 
 
