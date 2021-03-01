@@ -1,14 +1,14 @@
 module.exports = process.env.NODE_ENV === "production" ? {
-  FRONT_URL: "https://app.res2menu.com",
-  END_POINT_WS_URL: "https://api.res2menu.com",
+  FRONT_URL: "http://app.aos.res2menu.online",
+  END_POINT_WS_URL: "http://api.aos.res2menu.online",
   SITEMAP: {
     INDEX: "/",
     LOGIN: "/login",
     HOME: "/"
   }
 } : {
-  FRONT_URL: "http://localhost:3000",
-  END_POINT_WS_URL: "http://localhost:3001",
+  FRONT_URL: "http://app.aos.res2menu.online",
+  END_POINT_WS_URL: "http://api.aos.res2menu.online",
   SITEMAP: {
     INDEX: "/",
     LOGIN: "/login",
