@@ -1,46 +1,67 @@
-# Getting Started with Create React App
+# AOS front-end technical test
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) based on typescript template.
 
-## Available Scripts
+## Steps to start the project
 
-In the project directory, you can run:
+1) First clone the source code of the project:
+### `git clone https://github.com/AhmedOuali/sos-tech-test`
 
-### `yarn start`
 
-Runs the app in the development mode.\
+2) Install dependencies
+### `npm install`
+
+3) launch the project
+### `npm start`
+
+It runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
+4)  Go to production
+once you have completed development and want to go into production, to create a production version, run this command
+### `npm run build`
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Test users
+#### user1  
+Email:test@test.com  
+Password: test
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### user2
+Email:test1@test.com  
+Password: test
 
-### `yarn eject`
+## Api used
+To make the application work correctly, we have chosen to develop a specific API for it:
+### login: {post} http://api.aos.res2menu.online/auth/login
+request: {email:string, password: string}  
+response: {status: 'OK' | 'FAILURE', redirect: string, user: {id: number, email: string, username: string}}
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### checkAuthentication: {get} http://api.aos.res2menu.online/auth/checkAuthentication
+response: {status: 'OK' | 'FAILURE', redirect: string, user: {id: number, email: string, username: string}}
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### logout: {get} http://api.aos.res2menu.online/auth/logout 
+response: {status: string}
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### getAllTasks: {get} http://api.aos.res2menu.online/tasks
+response: {id: number, title: string, shortDesc: string, longDesc: string, createdAt: string, updatedAt: string, ownerId: number}[]
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### getTask: {get} http://api.aos.res2menu.online/tasks/:id
+response: {id: number, title: string, shortDesc: string, longDesc: string, createdAt: string, updatedAt: string, ownerId: number}
 
-## Learn More
+### deleteTask: {delete} http://api.aos.res2menu.online/tasks/:id
+response: {id: number, title: string, shortDesc: string, longDesc: string, createdAt: string, updatedAt: string, ownerId: number}
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### updateTask: {update} http://api.aos.res2menu.online/tasks/:id
+request: {id: number, title: string, shortDesc: string, longDesc: string, createdAt: string, updatedAt: string, ownerId: number}
+response: {id: number, title: string, shortDesc: string, longDesc: string, createdAt: string, updatedAt: string, ownerId: number}
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### createTask: {post} http://api.aos.res2menu.online/tasks
+request: {id: number, title: string, shortDesc: string, longDesc: string, createdAt: string, updatedAt: string, ownerId: number}
+response: {id: number, title: string, shortDesc: string, longDesc: string, createdAt: string, updatedAt: string, ownerId: number}
+
+
